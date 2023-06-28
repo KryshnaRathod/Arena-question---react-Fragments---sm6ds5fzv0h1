@@ -1,28 +1,16 @@
 import React from 'react';
 import ListItems from './ListItems';
-
- 
-const List = (listx) => {
-  const [count, setCount] = useState(0);
-
-  const handleButtonClick = () => {
-    const inputValue = parseInt(document.getElementById('input').value);
-    setCount(inputValue);
-  };
-
+const List = ({ listx }) => {
   return (
-    <>
-      <input id="input" type="number" />
-      <button id="button" onClick={handleButtonClick}>
-        Click
-      </button>
-      <ul id="list">
-        {[...Array(count)].map((_, index) => (
-          <ListItems key={index} />
-        ))}
-      </ul>
-    </>
+    <ul id="list">
+      {listx.map((item) => (
+        <ListItems key={item} text={item} />
+      ))}
+    </ul>
   );
 };
 
 export default List;
+ 
+
+

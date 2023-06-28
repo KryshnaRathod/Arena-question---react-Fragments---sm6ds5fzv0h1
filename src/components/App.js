@@ -9,13 +9,19 @@ const App = () => {
   const [list, setList] = useState([]);
 
 
-  const onButtonClick = () => {
-    setList([])
-    for (let i = 1; i < Number(value)+1; i++) {
-      
-      setList((prev) => [...prev, i]);
+const onButtonClick = () => {
+    if (!value) {
+      return;
     }
-   
+    const count = parseInt(value);
+    if (isNaN(count) || count <= 0) {
+      return;
+    }
+    const items = Array.from({ length: count }, (_, index) => ({
+      id: `Item ${index + 1}`,
+      valuex: `Item ${index + 1}`
+    }));
+    setList(items);
   };
  
 

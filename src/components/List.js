@@ -3,19 +3,16 @@ import ListItems from './ListItems';
 
  
  const List = ({ listx }) => {
-  const renderListItems = () => {
-    const items = [];
-    for (let i = 0; i < listx; i++) {
-      items.push(<ListItems key={i} />);
-    }
-    return items;
-  };
-
-  return (
-    <ul id="list">
-      <li className="items" />
-      {renderListItems()}
-    </ul>
+    <>
+      {listx.length > 0 && (
+        <ul id="list">
+          <li className="items">{listx[0].valuex}</li>
+          {listx.slice(1).map((valuex) => (
+            <ListItems key={listx.id} text={listx.valuex} />
+          ))}
+        </ul>
+      )}
+    </>
   );
 };
 

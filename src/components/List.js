@@ -1,16 +1,16 @@
-import React from 'react';
-import ListItems from './ListItems';
+import React from "react";
+import ListItems from "./ListItems";
+
 const List = ({ listx }) => {
-  return (
-    <ul id="list">
-      {listx.map((item) => (
-        <ListItems key={item} text={item} />
-      ))}
-    </ul>
-  );
+    console.log("listx", listx);
+    return (
+        // code here
+        <>
+            {listx.map((item) => (
+                <ListItems key={item} valuex={item} />
+            ))}
+        </>
+    );
 };
 
 export default List;
- 
-
-
